@@ -1,0 +1,14 @@
+# note.txt
+
+# Build the Docker image
+docker build -t your-image-name .
+
+# Push the Docker image to a registry (e.g., Docker Hub)
+docker tag your-image-name your-dockerhub-username/your-image-name
+docker push your-dockerhub-username/your-image-name
+
+# Pull the Docker image from the registry
+docker pull your-dockerhub-username/your-image-name
+
+# Run the Docker container with a bind mount
+docker run -d -p 80:80 -v ~/data/feedback:/usr/src/app/feedback your-dockerhub-username/your-image-name
